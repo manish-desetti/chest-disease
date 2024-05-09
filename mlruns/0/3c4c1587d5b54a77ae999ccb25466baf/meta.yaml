@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/desettma/Desktop/chest-disease/mlruns/0/3c4c1587d5b54a77ae999ccb25466baf/artifacts
+end_time: 1715250671855
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 3c4c1587d5b54a77ae999ccb25466baf
+run_name: stately-snail-825
+run_uuid: 3c4c1587d5b54a77ae999ccb25466baf
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1715250665772
+status: 3
+tags: []
+user_id: desettma
