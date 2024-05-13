@@ -74,10 +74,10 @@ if __name__ == "__main__":
 
 
         # For remote server only (Dagshub)
-        #remote_server_uri = "https://dagshub.com/entbappy/MLflow-Expriement-demo.mlflow"
-        #mlflow.set_tracking_uri(remote_server_uri) '''
+        remote_server_uri = "https://dagshub.com/manish-desetti/MLflow-Experiment-demo-.mlflow"
+        mlflow.set_tracking_uri(remote_server_uri)
 
-        tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme 
+        tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
 
         # Model registry does not work with file store
         if tracking_url_type_store != "file":
@@ -89,3 +89,4 @@ if __name__ == "__main__":
                 lr, "model", registered_model_name="ElasticnetWineModel")
         else:
             mlflow.sklearn.log_model(lr, "model")
+            

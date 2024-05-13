@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 cdc
+artifacts/*
 # C extensions
 *.so
 
