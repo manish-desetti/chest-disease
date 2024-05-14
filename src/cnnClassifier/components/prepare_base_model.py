@@ -24,6 +24,7 @@ class PrepareBaseModel:
     
     @staticmethod
     def _prepare_full_model(model, classes, freeze_all, freeze_till, learning_rate):
+        #freezing all the layers
         if freeze_all:
             for layer in model.layers:
                 model.trainable = False
@@ -32,9 +33,10 @@ class PrepareBaseModel:
                 model.trainable = False
 
         flatten_in = tf.keras.layers.Flatten()(model.output)
+        #custom dense layer
         prediction = tf.keras.layers.Dense(
             units=classes,
-            activation="softmax"
+            activation="sigmoid",
         )(flatten_in)
 
         full_model = tf.keras.models.Model(
@@ -44,7 +46,7 @@ class PrepareBaseModel:
 
         full_model.compile(
             optimizer=tf.keras.optimizers.SGD(learning_rate=learning_rate),
-            loss=tf.keras.losses.CategoricalCrossentropy(),
+            loss=tf.keras.losses.BinaryCrossentropy(),
             metrics=["accuracy"]
         )
 
